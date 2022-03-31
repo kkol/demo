@@ -1,4 +1,4 @@
-package com.demo.e2e;
+package com.main;
 
 import io.cucumber.junit.Cucumber;
 import io.cucumber.junit.CucumberOptions;

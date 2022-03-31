@@ -10,7 +10,7 @@ import org.springframework.context.annotation.PropertySource;
 import org.springframework.core.env.Environment;
 
 @Configuration
-@ComponentScan("com.demo.e2e")
+@ComponentScan("com")
 @PropertySource("classpath:environment/${spring.profiles.active:dev}.properties")
 public class FrameworkConfig {
 

@@ -10,8 +10,6 @@ import static com.codeborne.selenide.Selenide.open;
 
 public class MainPageSteps extends CucumberSpringConfiguration {
 
-
-
     @Given("^open google page$")
     public void openBrowser() {
         open("/");
