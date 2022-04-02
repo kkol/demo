@@ -1,4 +1,4 @@
-package framework;
+package com.demo.parabank.framework;
 
 import com.codeborne.selenide.Browser;
 import com.codeborne.selenide.Config;

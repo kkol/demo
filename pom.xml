@@ -12,8 +12,8 @@
 
     <modelVersion>4.0.0</modelVersion>
 
-    <groupId>org.example</groupId>
-    <artifactId>demoProject</artifactId>
+    <groupId>com.demo.parabank</groupId>
+    <artifactId>parabank</artifactId>
     <version>1.0-SNAPSHOT</version>
 
     <properties>
@@ -183,9 +183,6 @@
                     <forkCount>1</forkCount>
                     <reuseForks>true</reuseForks>
                     <rerunFailingTestsCount>1</rerunFailingTestsCount>
-                    <excludes>
-                        <exclude>**/DbCleanupTest.java</exclude>
-                    </excludes>
                 </configuration>
             </plugin>
             <plugin>

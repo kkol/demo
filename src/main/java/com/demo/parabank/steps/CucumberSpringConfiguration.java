@@ -1,6 +1,6 @@
-package steps;
+package com.demo.parabank.steps;
 
-import framework.FrameworkConfig;
+import com.demo.parabank.framework.FrameworkConfig;
 import io.cucumber.spring.CucumberContextConfiguration;
 import org.springframework.test.context.ContextConfiguration;
 

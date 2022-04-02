@@ -1,4 +1,4 @@
-package framework;
+package com.demo.parabank.framework;
 
 import io.qameta.allure.Allure;
 import lombok.extern.slf4j.Slf4j;
