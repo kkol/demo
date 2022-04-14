@@ -10,7 +10,7 @@ test_job:
     - name: selenium/standalone-chrome:100.0
       alias: grid
   script:
-    - mvn clean test -Dselenide.baseUrl=http://grid:4444
+    - mvn clean test "-Dselenide.baseUrl=http://localhost:4444".
   artifacts:
     paths:
       - target/allure-results
