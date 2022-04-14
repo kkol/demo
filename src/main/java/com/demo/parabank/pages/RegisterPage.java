@@ -1,13 +1,20 @@
 package com.demo.parabank.pages;
 
+import com.codeborne.selenide.Condition;
 import com.codeborne.selenide.SelenideElement;
+import lombok.NonNull;
 import org.openqa.selenium.By;
 import org.springframework.stereotype.Component;
+
+import java.time.Duration;
+import java.util.HashMap;
+import java.util.Map;
 
 import static com.codeborne.selenide.Selenide.$;
 
 @Component
 public class RegisterPage extends CommonHeaderPage {
+
 
     private static final String FIRST_NAME = "customer.firstName";
     private static final String LAST_NAME = "customer.lastName";
@@ -63,6 +70,27 @@ public class RegisterPage extends CommonHeaderPage {
     }
 
     public SelenideElement confirmPassword() {
+        return $(By.id(CONFIRM));
+    }
+
+    static Map<String, String> errorsMapping = new HashMap<String, String>() {{
+        put("First Name", "customer.firstName.errors");
+        put("Last Name", "customer.lastName.errors");
+        put("Address", "customer.address.street.errors");
+        put("City", "customer.address.city.errors");
+        put("State", "customer.address.state.errors");
+        put("Zip Code", "customer.address.zipCode.errors");
+        put("SSN", "customer.ssn.errors");
+        put("Username", "customer.username.errors");
+        put("Password", "customer.password.errors");
+        put("Confirm", "repeatedPassword.errors");
+    }};
+
+    public SelenideElement validationErrorByLabel(@NonNull final String label) {
+        return $(By.id(errorsMapping.get(label))).shouldBe(Condition.visible, Duration.ofSeconds(3));
+    }
+
+    public SelenideElement confirmPasswordError() {
         return $(By.id(CONFIRM));
     }
 

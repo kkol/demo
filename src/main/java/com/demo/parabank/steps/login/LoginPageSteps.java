@@ -11,6 +11,8 @@ import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import org.springframework.beans.factory.annotation.Autowired;
 
+import java.time.Duration;
+
 import static com.codeborne.selenide.Selenide.open;
 
 public class LoginPageSteps extends CucumberSpringConfiguration {
@@ -27,7 +29,7 @@ public class LoginPageSteps extends CucumberSpringConfiguration {
 
     @When("^user clicks register account button$")
     public void clickRegisterButton(){
-        loginPage.register().click();
+        loginPage.register().shouldBe(Condition.visible, Duration.ofSeconds(5)).click();
     }
 
 

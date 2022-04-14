@@ -1,10 +1,14 @@
 package com.demo.parabank.steps.login;
 
+import com.codeborne.selenide.Condition;
 import com.codeborne.selenide.Selenide;
 import com.codeborne.selenide.SelenideElement;
 import com.demo.parabank.framework.FrameworkConfig;
+import com.demo.parabank.helpers.ValueGenerator;
 import com.demo.parabank.pages.RegisterPage;
+import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
+import lombok.NonNull;
 import org.springframework.beans.factory.annotation.Autowired;
 
 import java.util.Map;
@@ -38,5 +42,10 @@ public class RegisterPageSteps {
     public void clickRegisterButton() {
         registerPage.registerButton().click();
         Selenide.sleep(5000);
+    }
+
+    @Then("^validation error '(.*)' for '(.*)' field is displayed$")
+    public void validationErrorIsDisplayed(@NonNull final String error, @NonNull final String field){
+        registerPage.validationErrorByLabel(field).shouldHave(Condition.exactText(error));
     }
 }
