@@ -7,10 +7,10 @@ cache:
 test_job:
   stage: test
   services:
-    - name: selenium/standalone-chrome:100.0
+    - name: selenium/standalone-chrome:95.0
       alias: grid
   script:
-    - mvn clean test "-Dselenide.baseUrl=http://grid:4444/wd/hub"
+    - mvn clean test -Dselenide.remote=http://grid:4444/wd/hub
   artifacts:
     paths:
       - target/allure-results
