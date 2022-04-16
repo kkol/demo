@@ -10,6 +10,7 @@ stages:
 
 test_job:
   stage: test
+  allow_failure: true
   services:
     - name: registry.gitlab.com/kkol1/demo
       alias: grid
@@ -21,6 +22,7 @@ test_job:
 
 report_job:
   stage: report
+  allow_failure: true
   script:
       - mvn allure:report
   artifacts:
