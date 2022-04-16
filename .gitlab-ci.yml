@@ -4,6 +4,10 @@ cache:
   paths:
     - .m2/repository
 
+stages:
+  - test
+  - report
+
 test_job:
   stage: test
   services:
@@ -14,5 +18,14 @@ test_job:
   artifacts:
     paths:
       - target/allure-results
+
+report_job:
+  stage: report
+  script:
+      - mvn allure:report
+  artifacts:
+    paths:
+      - target/allure-results
+      - target/allure-report
 
 
