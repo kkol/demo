@@ -7,7 +7,7 @@ cache:
 test_job:
   stage: test
   services:
-    - name: selenium/standalone-chrome:95.0
+    - name: registry.gitlab.com/kkol1/demo
       alias: grid
   script:
     - mvn clean test -Dselenide.remote=http://grid:4444/wd/hub
