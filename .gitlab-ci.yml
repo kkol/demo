@@ -19,6 +19,7 @@ test_job:
   artifacts:
     paths:
       - target/allure-results
+    when: always
 
 report_job:
   stage: report
