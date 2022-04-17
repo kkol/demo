@@ -29,3 +29,10 @@ end-to-end tests.
 ## Create report from test
 For reports, we will use _Allure_. After running tests all report partial files are saving in target directory.
 To create report from test run  `mvn allure:report`. Then directory with static page will be created in _target/allure-report_. 
+
+### Reports example:
+![ima](src/main/resources/report/firefox_9VM4UZOdMb.png)
+
+
+## Gitlab CI/CD
+For test running there is Gitlab CI/CD used with Selenium _standalone-chrome_ as a grid - image defined in **/Dockerfile**.
