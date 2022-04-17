@@ -1,8 +1,3 @@
-Test run: mvn clean test
-
-Report generation: mvn allure:report
-
-
 # Demo Selenide project with Cucumber and Gitlab CI/CD
 
 Project is created for demo purposes and contains all required framework element to deploy and run working 
